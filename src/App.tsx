@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <>
-      <h1 className="text-lg ">Testing</h1>
-    </>
-  );
+  return <></>;
 }
 
 export { App };
