@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Cairo", "sans-serif";
+  --font-sans: "Cairo", sans-serif;
 
   /* Created to only show our colors inside this project. And remove colors from tailwindcss in the intellisense */
   --color-*: initial;
@@ -20,4 +20,6 @@
   --color-pink-light: "#E9CCE1";
   --color-pink-base: "#C257A4";
   --color-pink-dark: "#884074";
+
+  ----shadow-sm: 0 4px 8px 0 rgba(54, 23, 45, 0.05);
 }
