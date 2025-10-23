@@ -33,7 +33,7 @@ const badgeTextVariant = cva("", {
   },
 });
 
-type badgeProps = {
+type BadgeProps = {
   className?: string;
   children: React.ReactNode;
 } & React.ComponentProps<"div"> &
@@ -45,7 +45,7 @@ const Badge = ({
   variant,
   size,
   ...props
-}: badgeProps) => {
+}: BadgeProps) => {
   return (
     <div className={badgeVariant({ variant, size, className })} {...props}>
       <Text

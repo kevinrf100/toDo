@@ -28,7 +28,7 @@ const buttonVariant = cva(
   }
 );
 
-type buttonProps = React.ComponentProps<"button"> &
+type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariant>;
 
 const Button = ({
@@ -38,7 +38,7 @@ const Button = ({
   size,
   children,
   ...props
-}: buttonProps) => {
+}: ButtonProps) => {
   return (
     <button
       className={buttonVariant({ variant, color, size, className })}
