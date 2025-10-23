@@ -9,15 +9,15 @@ const buttonVariant = cva(
         icon: "inline-flex rounded",
       },
       color: {
-        pink: "bg-pink-light [&>svg]:text-pink-base hover:bg-pink-dark [&>svg]:hover:text-white",
+        pink: "bg-pink-light  [&_svg:not([class*='text-'])]:text-pink-base hover:bg-pink-dark [&_svg:not([class*='text-'])]:hover:text-white",
         green: "bg-green-base hover:bg-green-dark text-white",
-        gray: "bg-gray-200 [&>svg]:text-pink-base hover:bg-pink-light text-gray-400",
+        gray: "bg-gray-200 [&_svg:not([class*='text-'])]:text-pink-base hover:bg-pink-light text-gray-400",
         transparent:
-          "bg-transparent [&>svg]:text-gray-300 [&>svg]:hover:text-gray-400 hover:bg-gray-200",
+          "bg-transparent [&_svg:not([class*='text-'])]:text-gray-300 [&_svg:not([class*='text-'])]:hover:text-gray-400 hover:bg-gray-200",
       },
       size: {
-        sm: "p-1 w-6 h-6 [&>svg]:w-6 [&>svg]:h-6 ",
-        md: "h-14 px-5 py-4 [&>svg]:w-5 [&>svg]:h-5",
+        sm: "p-1 w-6 h-6 [&_svg:not([class*='w-'])]:w-6 [&_svg:not([class*='h-'])]:h-6 ",
+        md: "h-14 px-5 py-4 [&_svg:not([class*='w-'])]:w-5 [&_svg:not([class*='h-'])]:h-5",
       },
     },
     defaultVariants: {
