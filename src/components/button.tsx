@@ -13,7 +13,7 @@ const buttonVariant = cva(
         green: "bg-green-base hover:bg-green-dark text-white",
         gray: "bg-gray-200 [&>svg]:text-pink-base hover:bg-pink-light text-gray-400",
         transparent:
-          "bg-transparent [&>svg]:text-gray-300 [&>svg]:hover:text-gray-400 hover:bg-pink-light",
+          "bg-transparent [&>svg]:text-gray-300 [&>svg]:hover:text-gray-400 hover:bg-gray-200",
       },
       size: {
         sm: "p-1 w-6 h-6 [&>svg]:w-6 [&>svg]:h-6 ",
