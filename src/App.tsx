@@ -2,6 +2,7 @@ import { CheckIcon, PlusIcon, TrashIcon, XIcon } from "@phosphor-icons/react";
 import { Button } from "./components/button";
 import { Badge } from "./components/badge";
 import { Text } from "./components/text";
+import { Input } from "./components/input";
 
 function App() {
   return (
@@ -10,6 +11,10 @@ function App() {
       <div className="flex flex-row gap-2">
         <Badge variant="secondary">0</Badge>
         <Badge variant="primary">2 de 5</Badge>
+      </div>
+      <Text variant="body-md-bold">Checking input</Text>
+      <div className="flex flex-row gap-2">
+        <Input />
       </div>
       <Text variant="body-md-bold">Checking Buttons</Text>
       <div className="flex flex-row gap-2">
