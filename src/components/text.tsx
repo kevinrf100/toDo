@@ -1,16 +1,16 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import React from "react";
+import { cva, type VariantProps } from 'class-variance-authority';
+import React from 'react';
 
-const textVariants = cva("font-sans text-gray-400", {
+const textVariants = cva('font-sans text-gray-400', {
   variants: {
     variant: {
-      "body-sm-bold": "text-sm leading-5 font-semibold",
-      "body-md": "text-base leading-6 font-normal",
-      "body-md-bold": "text-base leading-6 font-semibold",
+      'body-sm-bold': 'text-sm leading-5 font-semibold',
+      'body-md': 'text-base leading-6 font-normal',
+      'body-md-bold': 'text-base leading-6 font-semibold',
     },
   },
   defaultVariants: {
-    variant: "body-md",
+    variant: 'body-md',
   },
 });
 
@@ -21,7 +21,7 @@ type TextProps = {
 } & VariantProps<typeof textVariants>;
 
 const Text = ({
-  as = "span",
+  as = 'span',
   className,
   children,
   variant,
@@ -30,7 +30,7 @@ const Text = ({
   return React.createElement(
     as,
     { className: textVariants({ variant, className }), ...props },
-    children
+    children,
   );
 };
 

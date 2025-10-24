@@ -1,0 +1,9 @@
+*.json
+package-lock.json
+**.html
+*dist/
+node_modules/
+build/
+coverage/
+.vscode/
+.DS_Store

@@ -1,16 +1,16 @@
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva, type VariantProps } from 'class-variance-authority';
 
 const buttonVariant = cva(
-  "flex items-center justify-center cursor-pointer transition group disabled:pointer-events-none disabled:opacity-50 ",
+  'flex items-center justify-center cursor-pointer transition group disabled:pointer-events-none disabled:opacity-50 ',
   {
     variants: {
       variant: {
-        primary: "rounded-lg gap-2 text-base leading-6 font-semibold",
-        icon: "inline-flex rounded",
+        primary: 'rounded-lg gap-2 text-base leading-6 font-semibold',
+        icon: 'inline-flex rounded',
       },
       color: {
         pink: "bg-pink-light  [&_svg:not([class*='text-'])]:text-pink-base hover:bg-pink-dark [&_svg:not([class*='text-'])]:hover:text-white",
-        green: "bg-green-base hover:bg-green-dark text-white",
+        green: 'bg-green-base hover:bg-green-dark text-white',
         gray: "bg-gray-200 [&_svg:not([class*='text-'])]:text-pink-base hover:bg-pink-light text-gray-400",
         transparent:
           "bg-transparent [&_svg:not([class*='text-'])]:text-gray-300 [&_svg:not([class*='text-'])]:hover:text-gray-400 hover:bg-gray-200",
@@ -21,14 +21,14 @@ const buttonVariant = cva(
       },
     },
     defaultVariants: {
-      variant: "primary",
-      color: "gray",
-      size: "md",
+      variant: 'primary',
+      color: 'gray',
+      size: 'md',
     },
-  }
+  },
 );
 
-type ButtonProps = React.ComponentProps<"button"> &
+type ButtonProps = React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariant>;
 
 const Button = ({

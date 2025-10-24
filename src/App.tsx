@@ -1,8 +1,9 @@
-import { CheckIcon, PlusIcon, TrashIcon, XIcon } from "@phosphor-icons/react";
-import { Button } from "./components/button";
-import { Badge } from "./components/badge";
-import { Text } from "./components/text";
-import { Input } from "./components/input";
+import { CheckIcon, PlusIcon, TrashIcon, XIcon } from '@phosphor-icons/react';
+import { Button } from './components/button';
+import { Badge } from './components/badge';
+import { Text } from './components/text';
+import { Input } from './components/input';
+import { Toggle } from './components/toggle';
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
         <Badge variant="secondary">0</Badge>
         <Badge variant="primary">2 de 5</Badge>
       </div>
-      <Text variant="body-md-bold">Checking input</Text>
+      <Text variant="body-md-bold">Checking inputs</Text>
       <div className="flex flex-row gap-2">
         <Input />
+        <Toggle />
       </div>
       <Text variant="body-md-bold">Checking Buttons</Text>
       <div className="flex flex-row gap-2">

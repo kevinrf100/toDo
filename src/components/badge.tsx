@@ -1,42 +1,42 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import { Text } from "./text";
+import { cva, type VariantProps } from 'class-variance-authority';
+import { Text } from './text';
 
 const badgeVariant = cva(
-  "inline-flex items-center justify-center rounded-full",
+  'inline-flex items-center justify-center rounded-full',
   {
     variants: {
       variant: {
-        primary: "bg-green-light",
-        secondary: "bg-pink-light",
+        primary: 'bg-green-light',
+        secondary: 'bg-pink-light',
       },
       size: {
-        sm: "py.0.5 px-2",
-        md: "px-3 py-1.5",
+        sm: 'py.0.5 px-2',
+        md: 'px-3 py-1.5',
       },
     },
     defaultVariants: {
-      variant: "primary",
-      size: "md",
+      variant: 'primary',
+      size: 'md',
     },
-  }
+  },
 );
 
-const badgeTextVariant = cva("", {
+const badgeTextVariant = cva('', {
   variants: {
     variant: {
-      primary: "text-green-dark",
-      secondary: "text-pink-dark",
+      primary: 'text-green-dark',
+      secondary: 'text-pink-dark',
     },
   },
   defaultVariants: {
-    variant: "primary",
+    variant: 'primary',
   },
 });
 
 type BadgeProps = {
   className?: string;
   children: React.ReactNode;
-} & React.ComponentProps<"div"> &
+} & React.ComponentProps<'div'> &
   VariantProps<typeof badgeVariant>;
 
 const Badge = ({

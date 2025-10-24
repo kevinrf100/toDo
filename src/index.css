@@ -1,7 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-sans: "Cairo", sans-serif;
+  --font-sans: 'Cairo', sans-serif;
 
   /* Created to only show our colors inside this project. And remove colors from tailwindcss in the intellisense */
   --color-*: initial;
