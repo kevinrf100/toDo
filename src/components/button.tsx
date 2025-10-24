@@ -1,4 +1,4 @@
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
 
 const buttonVariant = cva(
   'flex items-center justify-center cursor-pointer transition group disabled:pointer-events-none disabled:opacity-50 ',
@@ -41,7 +41,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={buttonVariant({ variant, color, size, className })}
+      className={cx(buttonVariant({ variant, color, size }), className)}
       {...props}
     >
       {children}

@@ -1,4 +1,4 @@
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
 import React from 'react';
 
 const textVariants = cva('font-sans text-gray-400', {
@@ -29,7 +29,7 @@ const Text = ({
 }: TextProps) => {
   return React.createElement(
     as,
-    { className: textVariants({ variant, className }), ...props },
+    { className: cx(textVariants({ variant }), className), ...props },
     children,
   );
 };

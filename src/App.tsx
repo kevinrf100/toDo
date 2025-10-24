@@ -4,6 +4,7 @@ import { Button } from './components/button';
 import { Card } from './components/card';
 import { Container } from './components/container';
 import { Input } from './components/input';
+import { Skeleton } from './components/skeleton';
 import { Text } from './components/text';
 import { Toggle } from './components/toggle';
 
@@ -44,6 +45,12 @@ function App() {
       <Text variant="body-md-bold">Checking Card</Text>
       <div className="flex flex-row gap-2">
         <Card size="md">Testing</Card>
+      </div>
+      <Text variant="body-md-bold">Checking Skeleton</Text>
+      <div className="flex flex-row gap-2">
+        <Skeleton rounded="full" className="h-6" />
+        <Skeleton className="h-6 w-100" />
+        <Skeleton rounded="full" className="h-6 w-10" />
       </div>
     </Container>
   );

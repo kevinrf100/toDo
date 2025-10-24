@@ -1,4 +1,4 @@
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
 import { Text } from './text';
 
 const badgeVariant = cva(
@@ -47,7 +47,7 @@ const Badge = ({
   ...props
 }: BadgeProps) => {
   return (
-    <div className={badgeVariant({ variant, size, className })} {...props}>
+    <div className={cx(badgeVariant({ variant, size }), className)} {...props}>
       <Text
         variant="body-sm-bold"
         className={badgeTextVariant({ variant: variant ?? undefined })}
