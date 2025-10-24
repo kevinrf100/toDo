@@ -1,8 +1,9 @@
 import { CheckIcon, PlusIcon, TrashIcon, XIcon } from '@phosphor-icons/react';
-import { Button } from './components/button';
 import { Badge } from './components/badge';
-import { Text } from './components/text';
+import { Button } from './components/button';
+import { Card } from './components/card';
 import { Input } from './components/input';
+import { Text } from './components/text';
 import { Toggle } from './components/toggle';
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
         <Button variant="icon" color="green" size="sm" disabled>
           <CheckIcon />
         </Button>
+      </div>
+      <Text variant="body-md-bold">Checking Buttons</Text>
+      <div className="flex flex-row gap-2">
+        <Card size="md">Testing</Card>
       </div>
     </div>
   );
