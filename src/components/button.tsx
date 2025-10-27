@@ -1,5 +1,5 @@
+import { Skeleton } from '@/components/skeleton';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
-import { Skeleton } from './skeleton';
 
 const buttonVariant = cva(
   'flex items-center justify-center cursor-pointer transition group disabled:pointer-events-none disabled:opacity-50 text-nowrap',

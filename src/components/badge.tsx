@@ -1,6 +1,6 @@
+import { Skeleton } from '@/components/skeleton';
+import { Text } from '@/components/text';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
-import { Skeleton } from './skeleton';
-import { Text } from './text';
 
 const badgeVariant = cva(
   'inline-flex items-center justify-center rounded-full',
