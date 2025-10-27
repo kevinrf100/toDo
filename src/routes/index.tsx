@@ -1,4 +1,5 @@
 import { Container } from '@/components/container';
+import { TasksSummary } from '@/routes/-components/tasks-summary';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
@@ -7,8 +8,8 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   return (
-    <Container>
-      <div>Home Page</div>
+    <Container as="article">
+      <TasksSummary />
     </Container>
   );
 }
