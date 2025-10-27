@@ -1,4 +1,5 @@
 import { cva, cx, type VariantProps } from 'class-variance-authority';
+import { Skeleton } from './skeleton';
 import { Text } from './text';
 
 const badgeVariant = cva(
@@ -21,7 +22,7 @@ const badgeVariant = cva(
   },
 );
 
-const badgeTextVariant = cva('', {
+const badgeTextVariant = cva('text-nowrap', {
   variants: {
     variant: {
       primary: 'text-green-dark',
@@ -33,9 +34,22 @@ const badgeTextVariant = cva('', {
   },
 });
 
+const badgeSkeletonVariants = cva('', {
+  variants: {
+    size: {
+      sm: 'h-5 w-5 py.0.5 px-2',
+      md: 'w-8 h-8 px-3 py-1.5',
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+});
+
 type BadgeProps = {
   className?: string;
   children: React.ReactNode;
+  loading?: boolean;
 } & React.ComponentProps<'div'> &
   VariantProps<typeof badgeVariant>;
 
@@ -44,8 +58,18 @@ const Badge = ({
   className,
   variant,
   size,
+  loading,
   ...props
 }: BadgeProps) => {
+  if (loading) {
+    return (
+      <Skeleton
+        rounded="full"
+        className={cx(badgeSkeletonVariants({ size }))}
+      />
+    );
+  }
+
   return (
     <div className={cx(badgeVariant({ variant, size }), className)} {...props}>
       <Text

@@ -1,7 +1,8 @@
 import { cva, cx, type VariantProps } from 'class-variance-authority';
+import { Skeleton } from './skeleton';
 
 const buttonVariant = cva(
-  'flex items-center justify-center cursor-pointer transition group disabled:pointer-events-none disabled:opacity-50 ',
+  'flex items-center justify-center cursor-pointer transition group disabled:pointer-events-none disabled:opacity-50 text-nowrap',
   {
     variants: {
       variant: {
@@ -28,17 +29,43 @@ const buttonVariant = cva(
   },
 );
 
+const buttonSkeletonVariants = cva('', {
+  variants: {
+    variant: {
+      primary: 'rounded-lg',
+      icon: 'rounded',
+    },
+    size: {
+      sm: 'w-6 h-6 p-1',
+      md: 'h-14 w-32 px-5 py-4',
+    },
+  },
+  defaultVariants: {
+    variant: 'primary',
+    size: 'md',
+  },
+});
+
 type ButtonProps = React.ComponentProps<'button'> &
-  VariantProps<typeof buttonVariant>;
+  VariantProps<typeof buttonVariant> & {
+    loading?: boolean;
+  };
 
 const Button = ({
   className,
   variant,
   color,
   size,
+  loading,
   children,
   ...props
 }: ButtonProps) => {
+  if (loading) {
+    return (
+      <Skeleton className={cx(buttonSkeletonVariants({ variant, size }))} />
+    );
+  }
+
   return (
     <button
       className={cx(buttonVariant({ variant, color, size }), className)}
