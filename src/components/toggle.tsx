@@ -3,7 +3,22 @@ import { CheckIcon } from '@phosphor-icons/react';
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 
 const toggleVariants = cva(
-  'appearance-none peer rounded-sm border-2 border-solid border-green-base hover:border-green-dark hover:not-checked:bg-green-dark/20 hover:checked:bg-green-dark cursor-pointer disabled:pointer-events-none disabled:opacity-50 checked:bg-green-base transition',
+  [
+    'appearance-none',
+    'peer',
+    'rounded-sm',
+    'border-2',
+    'border-solid',
+    'border-green-base',
+    'hover:border-green-dark',
+    'hover:not-checked:bg-green-dark/20',
+    'hover:checked:bg-green-dark',
+    'cursor-pointer',
+    'disabled:pointer-events-none',
+    'disabled:opacity-50',
+    'checked:bg-green-base',
+    'transition',
+  ],
   {
     variants: {
       size: {
