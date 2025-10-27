@@ -1,6 +1,7 @@
 import { Badge } from '@/components/badge';
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
+import { Container } from '@/components/container';
 import { Input } from '@/components/input';
 import { Skeleton } from '@/components/skeleton';
 import { Text } from '@/components/text';
@@ -14,7 +15,7 @@ export const Route = createFileRoute('/components/')({
 
 function RouteComponent() {
   return (
-    <>
+    <Container className="flex flex-col gap-6">
       <Text variant="body-md-bold">Checking badges</Text>
       <div className="flex flex-row flex-wrap gap-2">
         <Badge variant="secondary">0</Badge>
@@ -67,6 +68,6 @@ function RouteComponent() {
         <Skeleton className="h-6 w-100" />
         <Skeleton rounded="full" className="h-6 w-100" />
       </div>
-    </>
+    </Container>
   );
 }
