@@ -29,6 +29,7 @@ const buttonVariant = cva(
       size: {
         sm: "p-1 w-6 h-6 [&_svg:not([class*='w-'])]:w-5[&_svg:not([class*='h-'])]:h-5 ",
         md: "h-14 px-5 py-4 [&_svg:not([class*='w-'])]:w-5 [&_svg:not([class*='h-'])]:h-5",
+        full: 'w-full py-4',
       },
     },
     defaultVariants: {

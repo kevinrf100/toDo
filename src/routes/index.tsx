@@ -1,5 +1,5 @@
 import { Container } from '@/components/container';
-import { TaskItem } from '@/routes/-components/tasks/task-item';
+import { TaskList } from '@/routes/-components/tasks/task-list';
 import { TasksSummary } from '@/routes/-components/tasks/task-summary';
 import { createFileRoute } from '@tanstack/react-router';
 
@@ -11,7 +11,7 @@ function RouteComponent() {
   return (
     <Container as="article" className="space-y-3">
       <TasksSummary />
-      <TaskItem />
+      <TaskList />
     </Container>
   );
 }
