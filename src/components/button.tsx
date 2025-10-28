@@ -27,7 +27,7 @@ const buttonVariant = cva(
           "bg-transparent [&_svg:not([class*='text-'])]:text-gray-300 [&_svg:not([class*='text-'])]:hover:text-gray-400 hover:bg-gray-200",
       },
       size: {
-        sm: "p-1 w-6 h-6 [&_svg:not([class*='w-'])]:w-6 [&_svg:not([class*='h-'])]:h-6 ",
+        sm: "p-1 w-6 h-6 [&_svg:not([class*='w-'])]:w-5[&_svg:not([class*='h-'])]:h-5 ",
         md: "h-14 px-5 py-4 [&_svg:not([class*='w-'])]:w-5 [&_svg:not([class*='h-'])]:h-5",
       },
     },
