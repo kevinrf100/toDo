@@ -1,7 +1,7 @@
 import { cva, cx, type VariantProps } from 'class-variance-authority';
 
 const inputVariants = cva(
-  'text-base font-normal font-sans border-b border-solid border-gray-200 focus:border-pink-base bg-transparent outline-none disabled:pointer-events-none',
+  'text-base font-normal font-sans border-b border-solid border-gray-200 focus:border-pink-base bg-transparent outline-none disabled:pointer-events-none placeholder:text-gray-300',
   {
     variants: {
       size: {
