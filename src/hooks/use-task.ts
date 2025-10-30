@@ -26,9 +26,29 @@ const useTask = () => {
     );
   };
 
+  const updateTaskStatus = (id: string, completed: boolean) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id
+          ? {
+              ...task,
+              completed,
+              state: completed ? 'completed' : 'in_progress',
+            }
+          : task,
+      ),
+    );
+  };
+
+  const deleteTask = (id: string) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return {
     prepareTask,
     updateTask,
+    updateTaskStatus,
+    deleteTask,
   };
 };
 
