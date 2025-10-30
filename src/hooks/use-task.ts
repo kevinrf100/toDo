@@ -16,8 +16,19 @@ const useTask = () => {
     ]);
   };
 
+  const updateTask = (id: string, payload: { title: Task['title'] }) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id
+          ? { ...task, state: 'in_progress', title: payload.title }
+          : task,
+      ),
+    );
+  };
+
   return {
     prepareTask,
+    updateTask,
   };
 };
 
