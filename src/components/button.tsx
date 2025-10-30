@@ -49,6 +49,7 @@ const buttonSkeletonVariants = cva('', {
     size: {
       sm: 'w-6 h-6 p-1',
       md: 'h-14 w-32 px-5 py-4',
+      full: 'w-full',
     },
   },
   defaultVariants: {
