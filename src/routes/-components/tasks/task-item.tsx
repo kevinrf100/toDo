@@ -24,6 +24,11 @@ const TaskItem = ({ task }: TaskItemProps) => {
   };
 
   const handleOnClickExitEdit = () => {
+    if (task.state === 'created') {
+      deleteTask(task.id);
+      return;
+    }
+
     setIsEditing(false);
   };
 
@@ -38,8 +43,9 @@ const TaskItem = ({ task }: TaskItemProps) => {
   };
 
   const handleOnChangeTaskStatus = (event: ChangeEvent<HTMLInputElement>) => {
-    setTaskCompleted(event.target.checked);
-    updateTaskStatus(task.id, taskCompleted);
+    const checked = event.target.checked;
+    setTaskCompleted(checked);
+    updateTaskStatus(task.id, checked);
   };
 
   const handleOnClickDeleteTask = () => {
