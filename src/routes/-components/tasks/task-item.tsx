@@ -1,6 +1,7 @@
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
 import { Input } from '@/components/input';
+import { Skeleton } from '@/components/skeleton';
 import { Text } from '@/components/text';
 import { Toggle } from '@/components/toggle';
 import { useTask } from '@/hooks/use-task';
@@ -11,9 +12,10 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 
 type TaskItemProps = {
   task: Task;
+  loading?: boolean;
 };
 
-const TaskItem = ({ task }: TaskItemProps) => {
+const TaskItem = ({ task, loading }: TaskItemProps) => {
   const [isEditing, setIsEditing] = useState(task.state === 'created');
   const [taskTitle, setTaskTitle] = useState(task.title);
   const [taskCompleted, setTaskCompleted] = useState(task.completed);
@@ -56,16 +58,25 @@ const TaskItem = ({ task }: TaskItemProps) => {
     <Card size="md">
       {!isEditing ? (
         <div className="flex items-center gap-4">
-          <Toggle checked={taskCompleted} onChange={handleOnChangeTaskStatus} />
-          <Text className={cx('flex-1', { 'line-through': taskCompleted })}>
-            {task.title}
-          </Text>
+          <Toggle
+            checked={taskCompleted}
+            onChange={handleOnChangeTaskStatus}
+            loading={loading}
+          />
+          {!loading ? (
+            <Text className={cx('flex-1', { 'line-through': taskCompleted })}>
+              {task.title}
+            </Text>
+          ) : (
+            <Skeleton className="h-6 flex-1" />
+          )}
           <div className="flex gap-1">
             <Button
               variant="icon"
               color="transparent"
               size="sm"
               onClick={handleOnClickDeleteTask}
+              loading={loading}
             >
               <TrashIcon />
             </Button>
@@ -74,6 +85,7 @@ const TaskItem = ({ task }: TaskItemProps) => {
               color="transparent"
               size="sm"
               onClick={handleOnClickEditText}
+              loading={loading}
             >
               <PencilIcon />
             </Button>
