@@ -6,7 +6,7 @@ export const useTasks = () => {
 
   return {
     tasks,
-    tasksCount: tasks.length,
+    tasksCount: tasks.filter((tasks) => !(tasks.state === 'created')).length,
     completedTasksCount: tasks.filter((task) => task.completed).length,
     setTasks,
   };
